@@ -25,3 +25,7 @@ The ResidualBind is a python package that uses TensorFlow for DNN training and m
 - Figure3_VTS1_analysis.ipynb - jupyter notebook that generates Figure 3 in (Koo et al.)
 - Figure4_GC-bias_analysis.ipynb - jupyter notebook that generates Figure 4 in (Koo et al.)
 
+#### Data
+- Raw data can be downloaded from: Ray et al. Nature, 20013.
+- Data from this study was downloaded from: http://tools.genes.toronto.edu/deepbind/nbtcode/nbt3300-supplementary-software.zip
+- Processed data (e.g. rnacompete2013.h5 <-- from running generate_rnacompete_2013_dataset.py) can be downloaded from:  Koo, Peter (2021), “Processed RNAcompete data”, Mendeley Data, V1, doi: 10.17632/m2yzh6ktzb.1
