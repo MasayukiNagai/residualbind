@@ -207,7 +207,7 @@ class ResidualBind():
                                 callbacks=[es_callback, reduce_lr])
 
         # save weights
-        model.save_weights()
+        self.save_weights()
 
 
     def test_model(self, test, batch_size=100, load_weights=None):
