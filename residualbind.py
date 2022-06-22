@@ -119,10 +119,12 @@ class ResidualBind():
         # set up optimizer and metrics
         if not self.classification:
             self.model.compile(optimizer=optimizer, loss=keras.losses.MeanSquaredError())
-        else:
+        else:           
+            auroc = keras.metrics.AUC(curve='ROC', name='auroc')
+            aupr = keras.metrics.AUC(curve='PR', name='aupr')
             self.model.compile(optimizer=optimizer,
                           loss=keras.losses.BinaryCrossentropy(),
-                          metrics=['accuracy', auroc, aupr])
+                          metrics=[auroc, aupr])
         
 
     def fit(self, train, valid, num_epochs=300, batch_size=100, 
