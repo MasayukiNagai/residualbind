@@ -120,7 +120,7 @@ class ResidualBind():
         if not self.classification:
             self.model.compile(optimizer=optimizer, loss=keras.losses.MeanSquaredError())
         else:
-            model.compile(optimizer=optimizer,
+            self.model.compile(optimizer=optimizer,
                           loss=keras.losses.BinaryCrossentropy(),
                           metrics=['accuracy', auroc, aupr])
         
@@ -196,7 +196,7 @@ class ResidualBind():
                                                       verbose=1) 
 
         # fit model
-        history = self.model.fit(x_train, y_train, 
+        history = self.model.fit(train['inputs'], train['targets'], 
                                 epochs=num_epochs,
                                 batch_size=batch_size, 
                                 shuffle=True,
