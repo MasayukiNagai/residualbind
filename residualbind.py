@@ -190,7 +190,7 @@ class ResidualBind():
                                                     patience=patience, 
                                                     verbose=1, 
                                                     mode='max', 
-                                                    restore_best_weights=False)
+                                                    restore_best_weights=True)
         reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor='val_auroc', 
                                                       factor=lr_decay,
                                                       patience=decay_patience, 
@@ -207,8 +207,7 @@ class ResidualBind():
                                 callbacks=[es_callback, reduce_lr])
 
         # save weights
-        weights_path = os.path.join(self.weights_path, name+'.hdf5')
-        model.save_weights(weights_path)
+        model.save_weights()
 
 
     def test_model(self, test, batch_size=100, load_weights=None):
