@@ -207,7 +207,7 @@ class ResidualBind():
                                 callbacks=[es_callback, reduce_lr])
 
         # save weights
-        weights_path = os.path.join(params_path, name+'.hdf5')
+        weights_path = os.path.join(self.weights_path, name+'.hdf5')
         model.save_weights(weights_path)
 
 
